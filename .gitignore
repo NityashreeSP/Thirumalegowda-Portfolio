@@ -1,24 +1,23 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Dependencies
+node_modules/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Build output
+dist/
+
+# Environment variables and API keys
+.env
+.env.*
+!.env.example
+
+# Personal photos
+public/images/
+public/profile/
+public/photos/
+
+# Resume (optional - ignore if you don't want it public)
+public/Thirumale_Gowda_BV_Resume.pdf
+
+# Local system files
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+Thumbs.db

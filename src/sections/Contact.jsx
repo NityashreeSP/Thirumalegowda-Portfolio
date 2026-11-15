@@ -19,9 +19,9 @@ import {
 } from "lucide-react";
 
 // Add your EmailJS credentials here after creating the template.
-const EMAILJS_SERVICE_ID = "service_g6xf62b";
-const EMAILJS_TEMPLATE_ID = "template_g7b04i2";
-const EMAILJS_PUBLIC_KEY = "kMTeeyIXVfYVuMGUZ";
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const EMAIL = "thirumalegowdabv19@gmail.com";
 
