@@ -190,17 +190,17 @@ function Hero() {
         @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap');
 
         .hx {
-          --red: #d3142f;
-          --hot: #ff4a5c;
-          --ink: #f4eaea;
-          --dim: #a89a9d;
-          --line: rgba(244, 234, 234, 0.14);
-          min-height: 100vh;
-          padding: 120px 0 72px;
-          background: #000;
-          color: var(--ink);
-          font-family: "Bricolage Grotesque", system-ui, sans-serif;
-        }
+  --red: #d3142f;
+  --hot: #ff4a5c;
+  --ink: #f4eaea;
+  --dim: #a89a9d;
+  --line: rgba(244, 234, 234, 0.14);
+  min-height: auto; /* CHANGED: Was 100vh; removes forced extra vertical space */
+  padding: 100px 0 40px; /* CHANGED: Reduced bottom padding from 72px to 40px */
+  background: #000;
+  color: var(--ink);
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+}
         .hx *, .hx *::before, .hx *::after { box-sizing: border-box; }
         .hx p, .hx ul, .hx dl, .hx dd, .hx h1 { margin: 0; padding: 0; }
         .hx ul { list-style: none; }

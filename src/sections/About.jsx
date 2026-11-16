@@ -411,15 +411,15 @@ function About() {
       {/* INTERNAL CSS */}
       <style>{`
         .ab-section {
-          position: relative;
-          width: 100%;
-          padding: 100px 5%;
-          overflow: hidden;
-          box-sizing: border-box;
-          background: #070606;
-          color: #f5eeee;
-          font-family: system-ui, sans-serif;
-        }
+  position: relative;
+  width: 100%;
+  padding: 40px 5% 80px; /* Reduced top padding from 100px to 40px */
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #070606;
+  color: #f5eeee;
+  font-family: system-ui, sans-serif;
+}
 
         .ab-grid-bg {
           position: absolute;
