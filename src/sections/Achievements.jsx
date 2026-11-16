@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
@@ -541,7 +540,7 @@ function Achievements() {
         .journey-section {
           position: relative;
           width: 100%;
-          padding: 115px 5vw 100px;
+          padding: 100px 5vw 80px;
           box-sizing: border-box;
           background: #050505;
           color: #f5f0f1;
@@ -574,12 +573,12 @@ function Achievements() {
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
-          gap: 45px;
-          margin-bottom: 85px;
+          gap: 40px;
+          margin-bottom: 70px;
         }
 
         .journey-label {
-          margin: 0 0 18px;
+          margin: 0 0 16px;
           font-family: monospace;
           font-size: 10px;
           letter-spacing: 0.16em;
@@ -588,9 +587,9 @@ function Achievements() {
 
         .journey-header h1 {
           margin: 0;
-          font-size: clamp(48px, 7vw, 86px);
-          line-height: 0.88;
-          letter-spacing: -0.075em;
+          font-size: clamp(38px, 6vw, 84px);
+          line-height: 0.92;
+          letter-spacing: -0.06em;
           font-weight: 800;
         }
 
@@ -602,15 +601,15 @@ function Achievements() {
           max-width: 340px;
           margin: 0 0 5px;
           font-family: monospace;
-          font-size: 11px;
-          line-height: 1.9;
+          font-size: clamp(10px, 1.2vw, 11px);
+          line-height: 1.8;
           color: rgba(255, 235, 238, 0.48);
         }
 
         /* SECTION BLOCKS */
 
         .journey-block {
-          margin-bottom: 85px;
+          margin-bottom: 75px;
         }
 
         .block-heading {
@@ -618,8 +617,8 @@ function Achievements() {
           justify-content: space-between;
           align-items: center;
           gap: 20px;
-          margin-bottom: 30px;
-          padding-bottom: 20px;
+          margin-bottom: 26px;
+          padding-bottom: 18px;
           border-bottom: 1px solid rgba(255, 255, 255, 0.09);
         }
 
@@ -629,7 +628,7 @@ function Achievements() {
 
         .block-index {
           display: block;
-          margin-bottom: 10px;
+          margin-bottom: 8px;
           font-family: monospace;
           font-size: 9px;
           letter-spacing: 0.14em;
@@ -638,8 +637,8 @@ function Achievements() {
 
         .block-heading h2 {
           margin: 0;
-          font-size: clamp(23px, 3vw, 32px);
-          letter-spacing: -0.045em;
+          font-size: clamp(21px, 2.8vw, 30px);
+          letter-spacing: -0.04em;
         }
 
         /* LEADERSHIP CARDS */
@@ -652,11 +651,11 @@ function Achievements() {
 
         .leadership-card {
           position: relative;
-          min-height: 290px;
+          min-height: 260px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          padding: 27px;
+          padding: 24px;
           border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 16px;
           background: linear-gradient(
@@ -670,7 +669,7 @@ function Achievements() {
         }
 
         .leadership-card:hover {
-          transform: translateY(-5px);
+          transform: translateY(-4px);
           border-color: rgba(255, 48, 72, 0.38);
           background: linear-gradient(
             145deg,
@@ -688,12 +687,12 @@ function Achievements() {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 25px;
+          margin-bottom: 20px;
         }
 
         .leadership-icon {
-          width: 46px;
-          height: 46px;
+          width: 44px;
+          height: 44px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -710,7 +709,7 @@ function Achievements() {
         }
 
         .leadership-category {
-          margin: 0 0 10px;
+          margin: 0 0 8px;
           font-family: monospace;
           font-size: 8px;
           letter-spacing: 0.13em;
@@ -719,22 +718,22 @@ function Achievements() {
 
         .leadership-card h3 {
           margin: 0;
-          font-size: 23px;
+          font-size: clamp(19px, 2.2vw, 22px);
           letter-spacing: -0.04em;
         }
 
         .leadership-subtitle {
-          margin: 7px 0 0;
+          margin: 6px 0 0;
           font-family: monospace;
           font-size: 10px;
           color: rgba(255, 255, 255, 0.4);
         }
 
         .leadership-description {
-          margin: 17px 0 22px;
+          margin: 15px 0 20px;
           font-family: monospace;
           font-size: 10px;
-          line-height: 1.85;
+          line-height: 1.8;
           color: rgba(255, 235, 238, 0.55);
         }
 
@@ -742,7 +741,7 @@ function Achievements() {
           display: flex;
           align-items: center;
           gap: 8px;
-          margin: -4px 0 17px;
+          margin: -4px 0 16px;
           color: #ff7183;
         }
 
@@ -758,7 +757,7 @@ function Achievements() {
           justify-content: space-between;
           align-items: center;
           margin-top: auto;
-          padding: 15px 0 0;
+          padding: 14px 0 0;
           border: 0;
           border-top: 1px solid rgba(255, 255, 255, 0.08);
           background: transparent;
@@ -783,8 +782,8 @@ function Achievements() {
         }
 
         .recognition-card {
-          min-height: 215px;
-          padding: 22px;
+          min-height: auto;
+          padding: 20px;
           border: 1px solid rgba(255, 255, 255, 0.075);
           border-radius: 13px;
           background: rgba(255, 255, 255, 0.018);
@@ -801,12 +800,12 @@ function Achievements() {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 20px;
+          margin-bottom: 16px;
         }
 
         .recognition-icon {
-          width: 39px;
-          height: 39px;
+          width: 37px;
+          height: 37px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -822,7 +821,7 @@ function Achievements() {
         }
 
         .recognition-category {
-          margin: 0 0 9px;
+          margin: 0 0 8px;
           font-family: monospace;
           font-size: 8px;
           letter-spacing: 0.1em;
@@ -831,28 +830,28 @@ function Achievements() {
 
         .recognition-card h3 {
           margin: 0;
-          font-size: 17px;
+          font-size: 16px;
           line-height: 1.35;
           letter-spacing: -0.025em;
         }
 
         .recognition-description {
-          margin: 12px 0 0;
+          margin: 10px 0 0;
           font-family: monospace;
           font-size: 9px;
-          line-height: 1.8;
+          line-height: 1.75;
           color: rgba(255, 255, 255, 0.48);
         }
 
         .medal-list {
           display: flex;
           flex-wrap: wrap;
-          gap: 7px;
-          margin-top: 14px;
+          gap: 6px;
+          margin-top: 12px;
         }
 
         .medal-list span {
-          padding: 6px 8px;
+          padding: 5px 7px;
           border: 1px solid rgba(255, 48, 72, 0.2);
           border-radius: 5px;
           font-family: monospace;
@@ -871,8 +870,8 @@ function Achievements() {
         .certification-item {
           display: flex;
           align-items: center;
-          gap: 19px;
-          padding: 21px 23px;
+          gap: 16px;
+          padding: 18px 20px;
           border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 12px;
           background: rgba(255, 255, 255, 0.02);
@@ -886,8 +885,8 @@ function Achievements() {
         }
 
         .certification-icon {
-          width: 43px;
-          height: 43px;
+          width: 40px;
+          height: 40px;
           flex-shrink: 0;
           display: flex;
           align-items: center;
@@ -910,8 +909,8 @@ function Achievements() {
         }
 
         .certification-info h3 {
-          margin: 6px 0 0;
-          font-size: 15px;
+          margin: 4px 0 0;
+          font-size: 14px;
           font-weight: 500;
         }
 
@@ -955,7 +954,7 @@ function Achievements() {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 25px;
+          padding: 20px;
           box-sizing: border-box;
           background: rgba(0, 0, 0, 0.86);
           backdrop-filter: blur(14px);
@@ -963,7 +962,7 @@ function Achievements() {
 
         .journey-modal {
           width: min(780px, 100%);
-          max-height: 90vh;
+          max-height: 85vh;
           overflow-y: auto;
           border: 1px solid rgba(255, 48, 72, 0.25);
           border-radius: 19px;
@@ -985,12 +984,12 @@ function Achievements() {
           justify-content: space-between;
           align-items: flex-start;
           gap: 20px;
-          padding: 27px 30px;
+          padding: 22px 26px;
           border-bottom: 1px solid rgba(255, 255, 255, 0.07);
         }
 
         .journey-modal-header p {
-          margin: 0 0 10px;
+          margin: 0 0 8px;
           font-family: monospace;
           font-size: 8px;
           letter-spacing: 0.13em;
@@ -999,21 +998,21 @@ function Achievements() {
 
         .journey-modal-header h2 {
           margin: 0;
-          font-size: 27px;
+          font-size: clamp(22px, 3vw, 28px);
           letter-spacing: -0.04em;
         }
 
         .journey-modal-header span {
           display: block;
-          margin-top: 7px;
+          margin-top: 6px;
           font-family: monospace;
           font-size: 10px;
           color: rgba(255, 255, 255, 0.4);
         }
 
         .modal-close {
-          width: 37px;
-          height: 37px;
+          width: 36px;
+          height: 36px;
           flex-shrink: 0;
           display: flex;
           align-items: center;
@@ -1033,11 +1032,11 @@ function Achievements() {
         }
 
         .journey-modal-content {
-          padding: 27px 30px 32px;
+          padding: 24px 26px 28px;
         }
 
         .modal-section-title {
-          margin: 0 0 17px;
+          margin: 0 0 15px;
           font-family: monospace;
           font-size: 9px;
           letter-spacing: 0.13em;
@@ -1052,9 +1051,9 @@ function Achievements() {
 
         .contribution-row {
           display: grid;
-          grid-template-columns: 35px 1fr;
+          grid-template-columns: 30px 1fr;
           gap: 12px;
-          padding: 15px 0;
+          padding: 13px 0;
           border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
@@ -1067,15 +1066,15 @@ function Achievements() {
         .contribution-row p {
           margin: 0;
           font-size: 12px;
-          line-height: 1.8;
+          line-height: 1.75;
           color: rgba(255, 255, 255, 0.65);
         }
 
         /* TATVA GALLERY */
 
         .tatva-gallery {
-          margin-top: 32px;
-          padding-top: 25px;
+          margin-top: 28px;
+          padding-top: 22px;
           border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
@@ -1084,16 +1083,16 @@ function Achievements() {
           justify-content: space-between;
           align-items: center;
           gap: 15px;
-          margin-bottom: 17px;
+          margin-bottom: 15px;
         }
 
         .gallery-heading .modal-section-title {
-          margin-bottom: 8px;
+          margin-bottom: 6px;
         }
 
         .gallery-heading h3 {
           margin: 0;
-          font-size: 21px;
+          font-size: 19px;
         }
 
         .gallery-heading > span {
@@ -1123,8 +1122,8 @@ function Achievements() {
           position: absolute;
           top: 50%;
           z-index: 2;
-          width: 38px;
-          height: 38px;
+          width: 36px;
+          height: 36px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -1142,11 +1141,11 @@ function Achievements() {
         }
 
         .gallery-prev {
-          left: 12px;
+          left: 10px;
         }
 
         .gallery-next {
-          right: 12px;
+          right: 10px;
         }
 
         .gallery-thumbnails {
@@ -1188,7 +1187,7 @@ function Achievements() {
           justify-content: space-between;
           align-items: center;
           gap: 15px;
-          padding: 19px 30px;
+          padding: 17px 26px;
           border-top: 1px solid rgba(255, 255, 255, 0.07);
         }
 
@@ -1202,7 +1201,7 @@ function Achievements() {
         .journey-modal-footer button {
           display: flex;
           align-items: center;
-          gap: 8px;
+          gap: 7px;
           border: 0;
           background: transparent;
           color: #ff6479;
@@ -1223,7 +1222,7 @@ function Achievements() {
           .journey-header {
             flex-direction: column;
             align-items: flex-start;
-            gap: 24px;
+            gap: 20px;
           }
 
           .leadership-grid {
@@ -1231,43 +1230,31 @@ function Achievements() {
           }
 
           .leadership-card {
-            min-height: 260px;
+            min-height: auto;
           }
         }
 
         @media (max-width: 600px) {
           .journey-section {
-            padding: 90px 20px 75px;
-          }
-
-          .journey-header h1 {
-            font-size: 51px;
+            padding: 70px 4% 60px;
           }
 
           .journey-block {
-            margin-bottom: 65px;
-          }
-
-          .block-heading h2 {
-            font-size: 23px;
+            margin-bottom: 55px;
           }
 
           .recognition-grid {
             grid-template-columns: 1fr;
           }
 
-          .recognition-card {
-            min-height: auto;
-          }
-
           .certification-item {
-            padding: 17px;
-            gap: 13px;
+            padding: 15px 16px;
+            gap: 12px;
           }
 
           .certification-info h3 {
             font-size: 13px;
-            line-height: 1.5;
+            line-height: 1.4;
           }
 
           .journey-overlay {
@@ -1275,15 +1262,11 @@ function Achievements() {
           }
 
           .journey-modal-header {
-            padding: 22px;
-          }
-
-          .journey-modal-header h2 {
-            font-size: 22px;
+            padding: 18px 20px;
           }
 
           .journey-modal-content {
-            padding: 22px;
+            padding: 18px 20px;
           }
 
           .gallery-main {
@@ -1300,7 +1283,7 @@ function Achievements() {
           }
 
           .journey-modal-footer {
-            padding: 17px 22px;
+            padding: 15px 20px;
           }
 
           .journey-footer {
@@ -1312,7 +1295,7 @@ function Achievements() {
           }
 
           .footer-line {
-            width: 22px;
+            width: 20px;
             flex-shrink: 0;
           }
         }

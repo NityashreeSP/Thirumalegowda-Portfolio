@@ -50,8 +50,8 @@ function Navbar({
         }
       },
       {
-        threshold: [0.2, 0.4, 0.6],
-        rootMargin: "-15% 0px -60% 0px",
+        threshold: [0.15, 0.35, 0.55],
+        rootMargin: "-15% 0px -50% 0px",
       }
     );
 
@@ -251,8 +251,8 @@ function Navbar({
 
         .menu-toggle {
           position: fixed;
-          top: 22px;
-          left: 22px;
+          top: 20px;
+          left: 20px;
           width: 44px;
           height: 44px;
           display: flex;
@@ -265,7 +265,7 @@ function Navbar({
           color: #ff354d;
           cursor: pointer;
           z-index: 1300;
-          transition: 0.25s ease;
+          transition: transform 0.25s ease, background 0.25s ease, left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .menu-toggle:hover {
@@ -299,7 +299,8 @@ function Navbar({
         .sidebar-backdrop {
           position: fixed;
           inset: 0;
-          background: rgba(0, 0, 0, 0.65);
+          background: rgba(0, 0, 0, 0.7);
+          backdrop-filter: blur(4px);
           opacity: 0;
           visibility: hidden;
           z-index: 1000;
@@ -327,6 +328,7 @@ function Navbar({
           transform: translateX(-100%);
           transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
         }
 
         .sidebar.open {
@@ -386,8 +388,8 @@ function Navbar({
         }
 
         .close-button {
-          width: 30px;
-          height: 30px;
+          width: 32px;
+          height: 32px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -407,7 +409,7 @@ function Navbar({
           display: flex;
           align-items: center;
           gap: 11px;
-          padding: 20px 7px;
+          padding: 18px 7px;
         }
 
         .avatar-wrapper {
@@ -472,17 +474,17 @@ function Navbar({
         .navigation {
           display: flex;
           flex-direction: column;
-          gap: 2px;
+          gap: 3px;
         }
 
         .nav-item {
           position: relative;
           width: 100%;
-          min-height: 40px;
+          min-height: 42px;
           display: flex;
           align-items: center;
           gap: 11px;
-          padding: 8px 10px;
+          padding: 8px 12px;
           border: 1px solid transparent;
           border-radius: 7px;
           background: transparent;
@@ -527,14 +529,14 @@ function Navbar({
         }
 
         .connect {
-          margin-top: 22px;
+          margin-top: 20px;
         }
 
         .external {
           display: flex;
           align-items: center;
           gap: 10px;
-          min-height: 37px;
+          min-height: 40px;
           padding: 7px 10px;
           border-radius: 7px;
           color: #887c80;
@@ -550,8 +552,8 @@ function Navbar({
 
         .brand-badge,
         .resume-icon {
-          width: 25px;
-          height: 25px;
+          width: 26px;
+          height: 26px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -608,7 +610,7 @@ function Navbar({
 
         @media (max-width: 600px) {
           .sidebar {
-            width: 280px;
+            width: 270px;
           }
 
           .menu-toggle {
@@ -617,7 +619,7 @@ function Navbar({
           }
 
           .menu-open {
-            left: 294px;
+            left: calc(270px - 56px);
           }
         }
       `}</style>

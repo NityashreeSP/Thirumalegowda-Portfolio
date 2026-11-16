@@ -1,4 +1,3 @@
-
 import { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
@@ -11,7 +10,6 @@ import {
   AlertCircle,
   Clock3,
   MessageCircle,
-  Code2,
   FileText,
   Sparkles,
   Copy,
@@ -103,7 +101,7 @@ function Contact() {
           position: relative;
           isolation: isolate;
           overflow: hidden;
-          padding: 125px 6vw 55px;
+          padding: 100px 5vw 45px;
           background: #060505;
           color: #f7eeee;
           font-family: inherit;
@@ -167,7 +165,7 @@ function Contact() {
           display: flex;
           align-items: center;
           gap: 12px;
-          margin-bottom: 28px;
+          margin-bottom: 22px;
           color: #ff596d;
           font-family: monospace;
           font-size: 10px;
@@ -186,10 +184,10 @@ function Contact() {
         .tg-contact-heading {
           max-width: 950px;
           margin: 0;
-          font-size: clamp(54px, 8.5vw, 112px);
+          font-size: clamp(40px, 7vw, 96px);
           font-weight: 900;
-          line-height: 0.91;
-          letter-spacing: -0.075em;
+          line-height: 0.92;
+          letter-spacing: -0.06em;
         }
 
         .tg-heading-white {
@@ -205,10 +203,10 @@ function Contact() {
 
         .tg-contact-intro {
           max-width: 540px;
-          margin: 27px 0 0;
+          margin: 22px 0 0;
           color: #928588;
-          font-size: 14px;
-          line-height: 1.9;
+          font-size: clamp(12px, 1.3vw, 14px);
+          line-height: 1.8;
         }
 
         .tg-contact-intro strong {
@@ -221,21 +219,21 @@ function Contact() {
         .tg-contact-layout {
           display: grid;
           grid-template-columns: 0.82fr 1.18fr;
-          gap: 55px;
+          gap: 45px;
           align-items: start;
-          margin-top: 75px;
+          margin-top: 60px;
         }
 
         .tg-contact-info {
           display: flex;
           flex-direction: column;
-          gap: 27px;
+          gap: 22px;
         }
 
         .tg-info-heading {
           margin: 0 0 5px;
           color: #f1e6e8;
-          font-size: 18px;
+          font-size: clamp(16px, 2vw, 18px);
           font-weight: 750;
           letter-spacing: -0.04em;
         }
@@ -243,8 +241,8 @@ function Contact() {
         .tg-info-description {
           margin: 0;
           color: #837579;
-          font-size: 12px;
-          line-height: 1.8;
+          font-size: 11px;
+          line-height: 1.75;
         }
 
         /* CONTACT DETAIL CARDS */
@@ -252,8 +250,8 @@ function Contact() {
         .tg-info-card {
           display: flex;
           align-items: center;
-          gap: 17px;
-          padding: 18px;
+          gap: 15px;
+          padding: 16px;
           border: 1px solid rgba(255,255,255,0.075);
           border-radius: 13px;
           background: linear-gradient(130deg, rgba(255,255,255,0.045), rgba(255,255,255,0.012));
@@ -261,7 +259,7 @@ function Contact() {
         }
 
         .tg-info-card:hover {
-          transform: translateX(5px);
+          transform: translateX(4px);
           border-color: rgba(255,48,72,0.38);
           background: rgba(255,35,60,0.045);
         }
@@ -271,8 +269,8 @@ function Contact() {
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
-          width: 45px;
-          height: 45px;
+          width: 42px;
+          height: 42px;
           border: 1px solid rgba(255,48,72,0.24);
           border-radius: 11px;
           background: rgba(255,48,72,0.08);
@@ -286,7 +284,7 @@ function Contact() {
 
         .tg-info-label {
           display: block;
-          margin-bottom: 6px;
+          margin-bottom: 4px;
           color: #75676a;
           font-family: monospace;
           font-size: 9px;
@@ -296,7 +294,7 @@ function Contact() {
         .tg-info-value {
           display: block;
           color: #e9dfe1;
-          font-size: 12px;
+          font-size: 11px;
           line-height: 1.6;
           text-decoration: none;
           overflow-wrap: anywhere;
@@ -332,8 +330,8 @@ function Contact() {
         .tg-availability {
           display: flex;
           align-items: flex-start;
-          gap: 13px;
-          padding: 17px;
+          gap: 12px;
+          padding: 15px;
           border: 1px solid rgba(255,48,72,0.18);
           border-radius: 12px;
           background: rgba(255,35,55,0.035);
@@ -343,7 +341,7 @@ function Contact() {
           width: 8px;
           height: 8px;
           flex-shrink: 0;
-          margin-top: 5px;
+          margin-top: 4px;
           border-radius: 50%;
           background: #ff4058;
           box-shadow: 0 0 12px #ff3048;
@@ -352,7 +350,7 @@ function Contact() {
 
         .tg-availability strong {
           display: block;
-          margin-bottom: 5px;
+          margin-bottom: 4px;
           color: #e9dfe1;
           font-size: 11px;
         }
@@ -360,13 +358,13 @@ function Contact() {
         .tg-availability span {
           color: #938588;
           font-size: 10px;
-          line-height: 1.7;
+          line-height: 1.6;
         }
 
         /* SOCIAL LINKS */
 
         .tg-social-title {
-          margin: 0 0 13px;
+          margin: 0 0 11px;
           color: #796c70;
           font-family: monospace;
           font-size: 9px;
@@ -376,14 +374,14 @@ function Contact() {
         .tg-socials {
           display: flex;
           flex-wrap: wrap;
-          gap: 10px;
+          gap: 8px;
         }
 
         .tg-social-link {
           display: inline-flex;
           align-items: center;
-          gap: 10px;
-          padding: 12px 15px;
+          gap: 8px;
+          padding: 10px 13px;
           border: 1px solid rgba(255,255,255,0.09);
           border-radius: 9px;
           background: rgba(255,255,255,0.025);
@@ -394,7 +392,7 @@ function Contact() {
         }
 
         .tg-social-link:hover {
-          transform: translateY(-3px);
+          transform: translateY(-2px);
           border-color: rgba(255,48,72,0.55);
           color: #ff6678;
           background: rgba(255,48,72,0.06);
@@ -434,7 +432,7 @@ function Contact() {
           align-items: center;
           justify-content: space-between;
           gap: 15px;
-          padding: 25px 28px;
+          padding: 22px 24px;
           border-bottom: 1px solid rgba(255,255,255,0.07);
         }
 
@@ -447,7 +445,7 @@ function Contact() {
         }
 
         .tg-form-top p {
-          margin: 6px 0 0;
+          margin: 4px 0 0;
           color: #827477;
           font-size: 10px;
         }
@@ -462,8 +460,8 @@ function Contact() {
         .tg-contact-form {
           display: flex;
           flex-direction: column;
-          gap: 20px;
-          padding: 28px;
+          gap: 18px;
+          padding: 24px;
         }
 
         .tg-form-row {
@@ -475,7 +473,7 @@ function Contact() {
         .tg-field {
           display: flex;
           flex-direction: column;
-          gap: 9px;
+          gap: 8px;
           min-width: 0;
         }
 
@@ -501,13 +499,13 @@ function Contact() {
         }
 
         .tg-field input {
-          height: 49px;
+          height: 46px;
           padding: 0 14px;
         }
 
         .tg-field textarea {
-          min-height: 145px;
-          padding: 15px;
+          min-height: 130px;
+          padding: 14px;
           resize: vertical;
           line-height: 1.7;
         }
@@ -529,12 +527,12 @@ function Contact() {
         .tg-subject-chips {
           display: flex;
           flex-wrap: wrap;
-          gap: 8px;
+          gap: 7px;
           margin-top: 2px;
         }
 
         .tg-chip {
-          padding: 8px 12px;
+          padding: 7px 11px;
           border: 1px solid rgba(255,255,255,0.1);
           border-radius: 30px;
           background: transparent;
@@ -566,9 +564,9 @@ function Contact() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          gap: 12px;
-          min-width: 175px;
-          padding: 15px 21px;
+          gap: 10px;
+          min-width: 165px;
+          padding: 14px 20px;
           border: 1px solid #ff3048;
           border-radius: 9px;
           background: linear-gradient(110deg, #d51934, #9e0c22);
@@ -582,7 +580,7 @@ function Contact() {
         }
 
         .tg-submit-button:hover:not(:disabled) {
-          transform: translateY(-3px);
+          transform: translateY(-2px);
           background: linear-gradient(110deg, #fa304a, #b90e2a);
           box-shadow: 0 12px 32px rgba(255,30,60,0.28);
         }
@@ -638,8 +636,8 @@ function Contact() {
           justify-content: space-between;
           align-items: center;
           gap: 20px;
-          margin-top: 95px;
-          padding-top: 23px;
+          margin-top: 70px;
+          padding-top: 20px;
           border-top: 1px solid rgba(255,255,255,0.08);
           color: #726568;
           font-family: monospace;
@@ -670,7 +668,7 @@ function Contact() {
         @media (max-width: 950px) {
           .tg-contact-layout {
             grid-template-columns: 1fr;
-            gap: 42px;
+            gap: 40px;
           }
 
           .tg-contact-info {
@@ -687,15 +685,11 @@ function Contact() {
 
         @media (max-width: 600px) {
           .tg-contact {
-            padding: 95px 20px 35px;
-          }
-
-          .tg-contact-heading {
-            font-size: clamp(48px, 13vw, 75px);
+            padding: 70px 4% 35px;
           }
 
           .tg-contact-layout {
-            margin-top: 48px;
+            margin-top: 40px;
           }
 
           .tg-contact-info {
@@ -708,7 +702,7 @@ function Contact() {
 
           .tg-form-top,
           .tg-contact-form {
-            padding: 21px;
+            padding: 18px 20px;
           }
 
           .tg-submit-row {
@@ -727,8 +721,8 @@ function Contact() {
           .tg-contact-footer {
             flex-direction: column;
             align-items: flex-start;
-            gap: 12px;
-            margin-top: 60px;
+            gap: 10px;
+            margin-top: 50px;
           }
         }
 

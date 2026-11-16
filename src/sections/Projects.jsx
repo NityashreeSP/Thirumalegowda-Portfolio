@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
@@ -357,7 +356,7 @@ function Projects() {
               >
                 <div className="project-card-top">
                   <div className="project-symbol">
-                    <Icon size={25} strokeWidth={1.6} />
+                    <Icon size={24} strokeWidth={1.6} />
                   </div>
 
                   <span className="project-number">{project.id}</span>
@@ -406,7 +405,7 @@ function Projects() {
                         aria-label={`${project.name} GitHub`}
                         title="GitHub repository"
                       >
-                        <Code2 size={17} />
+                        <Code2 size={16} />
                       </a>
                     )}
 
@@ -418,7 +417,7 @@ function Projects() {
                         aria-label={`${project.name} live website`}
                         title="Live website"
                       >
-                        <ExternalLink size={17} />
+                        <ExternalLink size={16} />
                       </a>
                     )}
 
@@ -430,7 +429,7 @@ function Projects() {
                         aria-label={`${project.name} Kaggle notebook`}
                         title="Kaggle notebook"
                       >
-                        <BrainCircuit size={17} />
+                        <BrainCircuit size={16} />
                       </a>
                     )}
                   </div>
@@ -621,7 +620,7 @@ function Projects() {
         .projects-section {
           position: relative;
           width: 100%;
-          padding: 115px 5vw 100px;
+          padding: 100px 5vw 80px;
           box-sizing: border-box;
           background: #050505;
           color: #f5f0f1;
@@ -654,12 +653,12 @@ function Projects() {
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
-          gap: 45px;
-          margin-bottom: 60px;
+          gap: 40px;
+          margin-bottom: 50px;
         }
 
         .projects-label {
-          margin: 0 0 18px;
+          margin: 0 0 16px;
           font-family: monospace;
           font-size: 10px;
           letter-spacing: 0.16em;
@@ -668,9 +667,9 @@ function Projects() {
 
         .projects-header h1 {
           margin: 0;
-          font-size: clamp(50px, 7vw, 88px);
-          line-height: 0.88;
-          letter-spacing: -0.075em;
+          font-size: clamp(38px, 6vw, 84px);
+          line-height: 0.92;
+          letter-spacing: -0.06em;
           font-weight: 800;
         }
 
@@ -683,10 +682,10 @@ function Projects() {
         }
 
         .projects-header-right p {
-          margin: 0 0 18px;
+          margin: 0 0 16px;
           font-family: monospace;
-          font-size: 11px;
-          line-height: 1.9;
+          font-size: clamp(10px, 1.2vw, 11px);
+          line-height: 1.8;
           color: rgba(255, 235, 238, 0.5);
         }
 
@@ -715,10 +714,10 @@ function Projects() {
           --project-soft: rgba(255, 48, 72, 0.09);
           position: relative;
           min-width: 0;
-          min-height: 430px;
+          min-height: auto;
           display: flex;
           flex-direction: column;
-          padding: 27px;
+          padding: 24px;
           box-sizing: border-box;
           border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 17px;
@@ -785,12 +784,12 @@ function Projects() {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 30px;
+          margin-bottom: 24px;
         }
 
         .project-symbol {
-          width: 48px;
-          height: 48px;
+          width: 44px;
+          height: 44px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -821,7 +820,7 @@ function Projects() {
           flex-wrap: wrap;
           align-items: center;
           gap: 9px;
-          margin-bottom: 13px;
+          margin-bottom: 12px;
           font-family: monospace;
           font-size: 8px;
           letter-spacing: 0.1em;
@@ -829,7 +828,7 @@ function Projects() {
         }
 
         .project-type {
-          padding: 5px 8px;
+          padding: 4px 7px;
           border: 1px solid color-mix(
             in srgb,
             var(--project-accent) 28%,
@@ -841,23 +840,23 @@ function Projects() {
 
         .project-card h2 {
           margin: 0;
-          font-size: clamp(24px, 3vw, 32px);
+          font-size: clamp(22px, 2.5vw, 30px);
           line-height: 1.15;
-          letter-spacing: -0.045em;
+          letter-spacing: -0.04em;
         }
 
         .project-subtitle {
-          margin: 9px 0 0;
+          margin: 8px 0 0;
           font-family: monospace;
           font-size: 10px;
           color: rgba(255, 255, 255, 0.42);
         }
 
         .project-description {
-          margin: 20px 0 22px;
+          margin: 16px 0 20px;
           font-family: monospace;
           font-size: 10px;
-          line-height: 1.9;
+          line-height: 1.85;
           color: rgba(255, 235, 238, 0.58);
         }
 
@@ -866,12 +865,12 @@ function Projects() {
         .project-tech-preview {
           display: flex;
           flex-wrap: wrap;
-          gap: 7px;
-          margin-bottom: 24px;
+          gap: 6px;
+          margin-bottom: 20px;
         }
 
         .project-tech-preview span {
-          padding: 7px 9px;
+          padding: 6px 8px;
           border: 1px solid rgba(255, 255, 255, 0.09);
           border-radius: 5px;
           background: rgba(255, 255, 255, 0.025);
@@ -898,14 +897,14 @@ function Projects() {
           justify-content: space-between;
           align-items: center;
           gap: 12px;
-          padding-top: 17px;
+          padding-top: 15px;
           border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .project-details-button {
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 8px;
           padding: 0;
           border: 0;
           background: transparent;
@@ -918,18 +917,18 @@ function Projects() {
         }
 
         .project-details-button:hover {
-          gap: 16px;
+          gap: 14px;
         }
 
         .project-quick-links {
           display: flex;
           align-items: center;
-          gap: 9px;
+          gap: 8px;
         }
 
         .project-quick-links a {
-          width: 33px;
-          height: 33px;
+          width: 32px;
+          height: 32px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -952,8 +951,8 @@ function Projects() {
           align-items: center;
           justify-content: center;
           gap: 15px;
-          margin-top: 50px;
-          padding: 22px;
+          margin-top: 45px;
+          padding: 20px;
           border: 1px solid rgba(255, 255, 255, 0.06);
           border-radius: 12px;
           background: rgba(255, 255, 255, 0.015);
@@ -985,7 +984,7 @@ function Projects() {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 22px;
+          padding: 20px;
           box-sizing: border-box;
           background: rgba(0, 0, 0, 0.87);
           backdrop-filter: blur(14px);
@@ -994,7 +993,7 @@ function Projects() {
         .project-modal {
           --project-accent: #ff5369;
           width: min(850px, 100%);
-          max-height: 91vh;
+          max-height: 85vh;
           overflow-y: auto;
           border: 1px solid color-mix(
             in srgb,
@@ -1023,14 +1022,14 @@ function Projects() {
           justify-content: space-between;
           align-items: flex-start;
           gap: 20px;
-          padding: 27px 30px;
+          padding: 22px 26px;
           border-bottom: 1px solid rgba(255, 255, 255, 0.07);
           background: rgba(16, 9, 11, 0.96);
           backdrop-filter: blur(12px);
         }
 
         .project-modal-header p {
-          margin: 0 0 10px;
+          margin: 0 0 8px;
           font-family: monospace;
           font-size: 8px;
           letter-spacing: 0.13em;
@@ -1039,21 +1038,21 @@ function Projects() {
 
         .project-modal-header h2 {
           margin: 0;
-          font-size: clamp(25px, 4vw, 36px);
-          letter-spacing: -0.045em;
+          font-size: clamp(22px, 3.5vw, 34px);
+          letter-spacing: -0.04em;
         }
 
         .project-modal-header span {
           display: block;
-          margin-top: 8px;
+          margin-top: 6px;
           font-family: monospace;
           font-size: 10px;
           color: rgba(255, 255, 255, 0.42);
         }
 
         .project-modal-close {
-          width: 38px;
-          height: 38px;
+          width: 36px;
+          height: 36px;
           flex-shrink: 0;
           display: flex;
           align-items: center;
@@ -1073,15 +1072,15 @@ function Projects() {
         }
 
         .project-modal-content {
-          padding: 28px 30px 32px;
+          padding: 24px 26px 28px;
         }
 
         .project-modal-section {
-          margin-bottom: 32px;
+          margin-bottom: 28px;
         }
 
         .modal-section-label {
-          margin: 0 0 15px;
+          margin: 0 0 13px;
           font-family: monospace;
           font-size: 9px;
           letter-spacing: 0.13em;
@@ -1092,7 +1091,7 @@ function Projects() {
           margin: 0;
           font-family: monospace;
           font-size: 11px;
-          line-height: 1.95;
+          line-height: 1.85;
           color: rgba(255, 255, 255, 0.62);
         }
 
@@ -1105,9 +1104,9 @@ function Projects() {
 
         .project-feature {
           display: grid;
-          grid-template-columns: 35px 1fr;
+          grid-template-columns: 30px 1fr;
           gap: 12px;
-          padding: 16px 0;
+          padding: 14px 0;
           border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
@@ -1122,7 +1121,7 @@ function Projects() {
         }
 
         .project-feature h3 {
-          margin: 0 0 7px;
+          margin: 0 0 5px;
           font-size: 13px;
         }
 
@@ -1130,7 +1129,7 @@ function Projects() {
           margin: 0;
           font-family: monospace;
           font-size: 10px;
-          line-height: 1.8;
+          line-height: 1.75;
           color: rgba(255, 255, 255, 0.47);
         }
 
@@ -1143,7 +1142,7 @@ function Projects() {
         }
 
         .project-modal-tech span {
-          padding: 8px 11px;
+          padding: 7px 10px;
           border: 1px solid color-mix(
             in srgb,
             var(--project-accent) 22%,
@@ -1157,16 +1156,16 @@ function Projects() {
         }
 
         .planned-section {
-          padding: 18px;
+          padding: 16px;
           border: 1px dashed rgba(255, 255, 255, 0.16);
           border-radius: 10px;
         }
 
         .planned-description {
-          margin: -5px 0 15px;
+          margin: -4px 0 13px;
           font-family: monospace;
           font-size: 9px;
-          line-height: 1.7;
+          line-height: 1.6;
           color: rgba(255, 255, 255, 0.42);
         }
 
@@ -1175,8 +1174,8 @@ function Projects() {
         .project-status {
           display: flex;
           align-items: flex-start;
-          gap: 13px;
-          padding: 17px;
+          gap: 12px;
+          padding: 15px;
           border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 10px;
           background: rgba(255, 255, 255, 0.025);
@@ -1186,14 +1185,14 @@ function Projects() {
           width: 7px;
           height: 7px;
           flex-shrink: 0;
-          margin-top: 5px;
+          margin-top: 4px;
           border-radius: 50%;
           background: var(--project-accent);
           box-shadow: 0 0 9px var(--project-accent);
         }
 
         .project-status p {
-          margin: 0 0 7px;
+          margin: 0 0 5px;
           font-family: monospace;
           font-size: 8px;
           letter-spacing: 0.12em;
@@ -1204,7 +1203,7 @@ function Projects() {
           display: block;
           font-family: monospace;
           font-size: 10px;
-          line-height: 1.8;
+          line-height: 1.7;
           color: rgba(255, 255, 255, 0.55);
         }
 
@@ -1216,7 +1215,7 @@ function Projects() {
           align-items: center;
           gap: 15px;
           flex-wrap: wrap;
-          padding: 20px 30px;
+          padding: 18px 26px;
           border-top: 1px solid rgba(255, 255, 255, 0.07);
         }
 
@@ -1229,8 +1228,8 @@ function Projects() {
         .project-modal-links a {
           display: flex;
           align-items: center;
-          gap: 8px;
-          padding: 10px 12px;
+          gap: 7px;
+          padding: 9px 11px;
           border: 1px solid color-mix(
             in srgb,
             var(--project-accent) 30%,
@@ -1253,7 +1252,7 @@ function Projects() {
         .project-modal-footer > button {
           display: flex;
           align-items: center;
-          gap: 7px;
+          gap: 6px;
           border: 0;
           background: transparent;
           color: rgba(255, 255, 255, 0.5);
@@ -1272,7 +1271,7 @@ function Projects() {
           .projects-header {
             flex-direction: column;
             align-items: flex-start;
-            gap: 25px;
+            gap: 20px;
           }
 
           .projects-header-right {
@@ -1282,32 +1281,19 @@ function Projects() {
           .projects-grid {
             grid-template-columns: 1fr;
           }
-
-          .project-card {
-            min-height: 390px;
-          }
         }
 
         @media (max-width: 600px) {
           .projects-section {
-            padding: 90px 20px 75px;
-          }
-
-          .projects-header h1 {
-            font-size: 53px;
+            padding: 70px 4% 60px;
           }
 
           .project-card {
-            min-height: 410px;
-            padding: 22px;
-          }
-
-          .project-card h2 {
-            font-size: 27px;
+            padding: 20px;
           }
 
           .project-card-footer {
-            align-items: flex-start;
+            align-items: center;
           }
 
           .project-overlay {
@@ -1315,15 +1301,15 @@ function Projects() {
           }
 
           .project-modal-header {
-            padding: 21px;
+            padding: 18px 20px;
           }
 
           .project-modal-content {
-            padding: 22px;
+            padding: 18px 20px;
           }
 
           .project-modal-footer {
-            padding: 18px 21px;
+            padding: 16px 20px;
             flex-direction: column;
             align-items: flex-start;
           }
@@ -1339,7 +1325,7 @@ function Projects() {
 
           .projects-bottom {
             align-items: flex-start;
-            padding: 17px;
+            padding: 16px;
           }
         }
       `}</style>

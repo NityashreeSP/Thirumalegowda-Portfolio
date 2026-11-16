@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -333,7 +332,7 @@ function Skills() {
         .sk-section {
           position: relative;
           min-height: 100vh;
-          padding: 130px 5vw 100px;
+          padding: 110px 5vw 80px;
           overflow: hidden;
           box-sizing: border-box;
           background: #070606;
@@ -385,17 +384,17 @@ function Skills() {
           position: relative;
           z-index: 2;
           max-width: 1300px;
-          margin: 0 auto 60px;
+          margin: 0 auto 50px;
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
-          gap: 40px;
-          padding-bottom: 36px;
+          gap: 30px;
+          padding-bottom: 30px;
           border-bottom: 1px solid rgba(255,48,72,0.2);
         }
 
         .sk-eyebrow {
-          margin: 0 0 22px;
+          margin: 0 0 16px;
           font-family: monospace;
           font-size: 11px;
           letter-spacing: 0.2em;
@@ -405,9 +404,9 @@ function Skills() {
         .sk-header h1 {
           margin: 0;
           font-family: Arial, Helvetica, sans-serif;
-          font-size: clamp(40px, 6vw, 88px);
-          line-height: 0.95;
-          letter-spacing: -0.06em;
+          font-size: clamp(32px, 5.5vw, 84px);
+          line-height: 0.98;
+          letter-spacing: -0.05em;
           font-weight: 800;
         }
 
@@ -424,9 +423,9 @@ function Skills() {
         }
 
         .sk-subtitle {
-          margin: 18px 0 0;
+          margin: 14px 0 0;
           color: #a58e92;
-          font-size: 13px;
+          font-size: clamp(12px, 1.4vw, 14px);
           letter-spacing: 0.02em;
         }
 
@@ -438,8 +437,8 @@ function Skills() {
         }
 
         .sk-stat {
-          min-width: 105px;
-          padding: 15px;
+          min-width: 100px;
+          padding: 13px 15px;
           border: 1px solid rgba(255,48,72,0.22);
           border-radius: 13px;
           background: rgba(50,8,15,0.45);
@@ -449,15 +448,15 @@ function Skills() {
         .sk-stat strong {
           display: flex;
           align-items: center;
-          height: 34px;
+          height: 30px;
           color: #ffe5e9;
-          font-size: 28px;
+          font-size: 24px;
           letter-spacing: -0.04em;
         }
 
         .sk-stat span {
           display: block;
-          margin-top: 8px;
+          margin-top: 6px;
           color: rgba(235,200,205,0.48);
           font-family: monospace;
           font-size: 8px;
@@ -491,8 +490,8 @@ function Skills() {
           max-width: 1300px;
           margin: 0 auto;
           display: grid;
-          grid-template-columns: 310px 1fr;
-          gap: 18px;
+          grid-template-columns: 300px 1fr;
+          gap: 20px;
           align-items: start;
         }
 
@@ -501,7 +500,7 @@ function Skills() {
         .sk-index {
           position: sticky;
           top: 100px;
-          padding: 24px;
+          padding: 20px;
           border: 1px solid rgba(255,48,72,0.25);
           border-radius: 20px;
           background: linear-gradient(
@@ -516,7 +515,7 @@ function Skills() {
         }
 
         .sk-index-title {
-          margin: 0 0 18px;
+          margin: 0 0 16px;
           color: #ff5368;
           font-family: monospace;
           font-size: 9px;
@@ -534,7 +533,7 @@ function Skills() {
           display: grid;
           grid-template-columns: 30px 1fr auto;
           align-items: center;
-          padding: 15px 12px;
+          padding: 13px 12px;
           border: 1px solid transparent;
           border-radius: 10px;
           background: transparent;
@@ -588,8 +587,8 @@ function Skills() {
         .sk-index-foot {
           display: flex;
           justify-content: space-between;
-          margin-top: 20px;
-          padding-top: 17px;
+          margin-top: 18px;
+          padding-top: 15px;
           border-top: 1px solid rgba(255,48,72,0.15);
           color: rgba(235,200,205,0.35);
           font-family: monospace;
@@ -606,8 +605,8 @@ function Skills() {
 
         .sk-detail {
           position: relative;
-          min-height: 550px;
-          padding: 38px;
+          min-height: auto;
+          padding: 32px;
           overflow: hidden;
           border: 1px solid rgba(255,48,72,0.24);
           border-radius: 20px;
@@ -647,6 +646,7 @@ function Skills() {
           font-family: monospace;
           font-size: 9px;
           letter-spacing: 0.14em;
+          flex-wrap: wrap;
         }
 
         .sk-detail-top span:first-child {
@@ -654,22 +654,22 @@ function Skills() {
         }
 
         .sk-detail h2 {
-          margin: 48px 0 14px;
+          margin: 32px 0 14px;
           max-width: 700px;
           color: #fff0f2;
-          font-size: clamp(32px, 4vw, 55px);
-          line-height: 1;
-          letter-spacing: -0.055em;
+          font-size: clamp(26px, 3.5vw, 50px);
+          line-height: 1.05;
+          letter-spacing: -0.04em;
           font-weight: 750;
         }
 
         .sk-detail-desc {
           margin: 0;
-          max-width: 500px;
-          color: rgba(235,215,219,0.57);
+          max-width: 550px;
+          color: rgba(235,215,219,0.7);
           font-family: monospace;
-          font-size: 12px;
-          line-height: 1.8;
+          font-size: clamp(11px, 1.2vw, 13px);
+          line-height: 1.7;
         }
 
         /* DIVIDER */
@@ -678,7 +678,7 @@ function Skills() {
           display: flex;
           align-items: center;
           gap: 14px;
-          margin: 42px 0 22px;
+          margin: 36px 0 20px;
           color: #ff6879;
           font-family: monospace;
           font-size: 9px;
@@ -699,7 +699,7 @@ function Skills() {
 
         .sk-cards {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
           gap: 10px;
         }
 
@@ -707,8 +707,8 @@ function Skills() {
           display: grid;
           grid-template-columns: auto 1fr auto;
           align-items: center;
-          gap: 12px;
-          padding: 17px;
+          gap: 10px;
+          padding: 14px 16px;
           border: 1px solid rgba(255,48,72,0.2);
           border-radius: 10px;
           background: rgba(150,0,25,0.07);
@@ -716,7 +716,7 @@ function Skills() {
         }
 
         .sk-card:hover {
-          transform: translateY(-4px);
+          transform: translateY(-3px);
           border-color: rgba(255,90,110,0.6);
           background: linear-gradient(
             135deg,
@@ -757,8 +757,8 @@ function Skills() {
           flex-wrap: wrap;
           align-items: center;
           gap: 12px;
-          margin-top: 35px;
-          padding-top: 22px;
+          margin-top: 30px;
+          padding-top: 20px;
           border-top: 1px solid rgba(255,48,72,0.17);
           font-family: monospace;
           font-size: 9px;
@@ -786,7 +786,7 @@ function Skills() {
           position: relative;
           z-index: 2;
           max-width: 1300px;
-          margin: 55px auto 0;
+          margin: 45px auto 0;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -806,7 +806,7 @@ function Skills() {
           color: #ff6879;
         }
 
-        /* TABLET */
+        /* RESPONSIVE UPDATES */
 
         @media (max-width: 1000px) {
           .sk-header {
@@ -820,33 +820,33 @@ function Skills() {
 
           .sk-index {
             position: static;
-            padding: 18px;
+            padding: 16px;
           }
 
           .sk-index-list {
             flex-direction: row;
             overflow-x: auto;
             padding-bottom: 5px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
           }
-
-          .sk-index-item {
-            min-width: 190px;
-          }
-
-          .sk-index-bar {
+          .sk-index-list::-webkit-scrollbar {
             display: none;
           }
 
-          .sk-index-foot {
+          .sk-index-item {
+            min-width: 170px;
+            padding: 10px 14px;
+          }
+
+          .sk-index-bar, .sk-index-foot {
             display: none;
           }
         }
 
-        /* MOBILE */
-
         @media (max-width: 600px) {
           .sk-section {
-            padding: 100px 20px 80px;
+            padding: 70px 4% 60px;
           }
 
           .sk-stats {
@@ -857,11 +857,11 @@ function Skills() {
           .sk-stat {
             flex: 1;
             min-width: 0;
-            padding: 11px;
+            padding: 10px;
           }
 
           .sk-stat strong {
-            font-size: 23px;
+            font-size: 20px;
           }
 
           .sk-stat span {
@@ -870,31 +870,31 @@ function Skills() {
           }
 
           .sk-detail {
-            padding: 23px;
-            min-height: auto;
+            padding: 20px;
           }
 
           .sk-detail h2 {
-            margin-top: 35px;
+            margin-top: 20px;
           }
 
           .sk-cards {
             grid-template-columns: 1fr 1fr;
+            gap: 8px;
           }
 
           .sk-card {
-            gap: 8px;
-            padding: 13px 10px;
+            gap: 6px;
+            padding: 11px 10px;
           }
 
           .sk-card-name {
             font-size: 11px;
-            overflow-wrap: anywhere;
+            word-break: break-word;
           }
 
           .sk-footer {
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
             font-size: 8px;
           }
         }

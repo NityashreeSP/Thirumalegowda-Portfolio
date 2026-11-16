@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -485,7 +484,7 @@ function About() {
 
         .ab-title {
           margin: 0;
-          font-size: clamp(30px, 4vw, 48px);
+          font-size: clamp(28px, 4vw, 48px);
           font-weight: 800;
           line-height: 1.1;
           letter-spacing: -0.04em;
@@ -503,7 +502,7 @@ function About() {
         .ab-subtitle {
           margin: 12px 0 0;
           color: #99898c;
-          font-size: 13px;
+          font-size: clamp(12px, 1.5vw, 14px);
         }
 
         .ab-status-pill {
@@ -518,6 +517,7 @@ function About() {
           font-family: monospace;
           font-size: 9px;
           letter-spacing: 0.1em;
+          white-space: nowrap;
         }
 
         .ab-dot {
@@ -562,7 +562,7 @@ function About() {
         .ab-intro-card h3 {
           max-width: 700px;
           margin: 23px 0 18px;
-          font-size: clamp(24px, 3vw, 36px);
+          font-size: clamp(22px, 3vw, 36px);
           line-height: 1.25;
           letter-spacing: -0.03em;
         }
@@ -571,8 +571,8 @@ function About() {
           max-width: 950px;
           margin: 0 0 14px;
           color: #b5a5a8;
-          font-size: 14px;
-          line-height: 1.9;
+          font-size: clamp(13px, 1.2vw, 14px);
+          line-height: 1.8;
         }
 
         .ab-intro-footer {
@@ -690,11 +690,12 @@ function About() {
           border-radius: 15px;
           background: rgba(25,12,14,0.65);
           backdrop-filter: blur(10px);
-          min-height: 320px;
+          min-height: auto;
         }
 
         .ab-edu-tabs {
           display: flex;
+          flex-wrap: wrap;
           gap: 8px;
           margin-bottom: 23px;
           padding-bottom: 14px;
@@ -801,7 +802,7 @@ function About() {
           padding: 13px;
           margin-bottom: 16px;
           border: 1px solid rgba(255,45,65,0.15);
-          border-radius: 9px;
+          border-radius: 99px;
           background: rgba(0,0,0,0.3);
         }
 
@@ -885,7 +886,6 @@ function About() {
         }
 
         .ab-interest-card p {
-          min-height: 82px;
           margin: 0 0 20px;
           color: #a99b9e;
           font-size: 12px;
@@ -921,7 +921,7 @@ function About() {
 
         .ab-beyond-text h3 {
           margin: 0 0 15px;
-          font-size: clamp(23px, 3vw, 30px);
+          font-size: clamp(20px, 3vw, 30px);
           line-height: 1.3;
         }
 
@@ -988,7 +988,7 @@ function About() {
           font-style: normal;
         }
 
-        /* RESPONSIVE */
+        /* RESPONSIVE UPDATES */
 
         @media (max-width: 1000px) {
           .ab-main-grid {
@@ -1002,7 +1002,7 @@ function About() {
 
         @media (max-width: 700px) {
           .ab-section {
-            padding: 75px 5%;
+            padding: 60px 4%;
           }
 
           .ab-header {
@@ -1012,7 +1012,7 @@ function About() {
           }
 
           .ab-intro-card {
-            padding: 22px;
+            padding: 20px;
             margin-bottom: 40px;
           }
 
@@ -1024,13 +1024,9 @@ function About() {
             grid-template-columns: 1fr;
           }
 
-          .ab-interest-card p {
-            min-height: auto;
-          }
-
           .ab-beyond-content {
             grid-template-columns: 1fr;
-            padding: 22px;
+            padding: 20px;
           }
 
           .ab-beyond-facts {
@@ -1040,6 +1036,7 @@ function About() {
           .ab-edu-top {
             align-items: flex-start;
             flex-direction: column;
+            gap: 6px;
           }
         }
       `}</style>

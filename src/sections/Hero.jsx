@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-/* ---------- DATA (unchanged) ---------- */
+/* ---------- DATA ---------- */
 const LINES = [
   "Building meaningful solutions",
   "Exploring AI & Machine Learning",
@@ -24,7 +24,6 @@ const STATS = [
 ];
 const EXPLORING = ["AI / ML", "DINOv3", "DEEP LEARNING", "FULL STACK", "REST APIs", "COMPUTER VISION"];
 
-/* terminal lines type out one after another */
 const CHAR_MS = 38;
 let clock = 1;
 const TYPED = LINES.map((text) => {
@@ -145,7 +144,13 @@ function Hero() {
               {TYPED.map(({ text, start }, i) => (
                 <p key={text}>
                   <b>&gt;</b>
-                  <span style={{ "--n": text.length, "--t": `${text.length * CHAR_MS}ms`, "--d": `${start}s` }}>
+                  <span
+                    style={{
+                      "--n": text.length,
+                      "--t": `${(text.length * CHAR_MS)}ms`,
+                      "--d": `${start}s`,
+                    }}
+                  >
                     {text}
                   </span>
                   {i === TYPED.length - 1 && <em>_</em>}
@@ -211,7 +216,7 @@ function Hero() {
         }
         .hx-hello { color: var(--hot); font-size: 15px; font-weight: 500; margin-bottom: 14px !important; }
         .hx-intro h1 {
-          font-size: clamp(56px, 8.2vw, 116px);
+          font-size: clamp(42px, 8.2vw, 116px);
           line-height: 0.92;
           font-weight: 800;
           letter-spacing: -0.035em;
@@ -270,6 +275,7 @@ function Hero() {
           overflow: hidden;
           font-size: 12px;
           font-weight: 700;
+          z-index: 2;
         }
         .hx-file span { padding: 7px 11px; background: #000; border: 1px solid var(--red); }
         .hx-file span:first-child { background: var(--red); border-color: var(--red); }
@@ -285,6 +291,7 @@ function Hero() {
           background: rgba(0, 0, 0, 0.82);
           font-size: 12px;
           font-weight: 700;
+          z-index: 2;
         }
         .hx s {
           display: inline-block;
@@ -346,21 +353,24 @@ function Hero() {
         @keyframes hx-blink { 50% { opacity: 0; } }
 
         .hx-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-        .hx-stats strong { display: block; font-size: clamp(28px, 3vw, 40px); font-weight: 800; line-height: 1; color: var(--ink); }
+        .hx-stats strong { display: block; font-size: clamp(24px, 3vw, 40px); font-weight: 800; line-height: 1; color: var(--ink); }
         .hx-stats small { display: block; margin-top: 6px; color: var(--dim); font-size: 12px; }
         .hx-explore { display: flex; flex-wrap: wrap; gap: 6px; }
         .hx-explore li { padding: 6px 11px; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; font-weight: 500; }
 
-        /* RESPONSIVE */
+        /* RESPONSIVE UPDATES */
         @media (max-width: 1000px) {
-          .hx-top { grid-template-columns: 1fr; gap: 48px; }
-          .hx-portrait { justify-self: start; width: min(100%, 340px); }
-          .hx-strip { grid-template-columns: 1fr; margin-top: 56px; }
+          .hx-top { grid-template-columns: 1fr; gap: 40px; }
+          .hx-portrait { justify-self: center; width: min(100%, 320px); margin: 0 auto; }
+          .hx-strip { grid-template-columns: 1fr; margin-top: 48px; }
           .hx-strip > section { padding: 24px 0; border-left: 0; border-bottom: 1px solid var(--line); }
         }
         @media (max-width: 560px) {
-          .hx { padding-top: 100px; }
-          .hx-file { right: 0; }
+          .hx { padding-top: 80px; }
+          .hx-wrap { width: 92%; }
+          .hx-portrait { width: calc(100% - 24px); margin-right: 12px; }
+          .hx-file { right: 0px; }
+          .hx-frame { box-shadow: 10px 10px 0 var(--red); }
         }
         @media (prefers-reduced-motion: reduce) {
           .hx-term p span, .hx-term em { animation: none; }

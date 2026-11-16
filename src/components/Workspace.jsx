@@ -8,7 +8,6 @@ import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import Experience from "../sections/Experience";
 import Achievements from "../sections/Achievements";
-import Certifications from "../sections/Certifications";
 import Contact from "../sections/Contact";
 
 function Workspace() {
@@ -38,11 +37,11 @@ function Workspace() {
         <Projects />
         <Experience />
         <Achievements />
-        <Certifications />
         <Contact />
       </main>
-<ThejasAI />
-      {/* FRIEND'S AI COMPANION WILL BE ADDED HERE */}
+
+      <ThejasAI />
+      {/* FRIEND'S AI COMPANION */}
 
       <style>{`
         :root {
@@ -52,14 +51,18 @@ function Workspace() {
         html {
           scroll-behavior: smooth;
           background: #050505;
+          -webkit-text-size-adjust: 100%;
         }
 
         body {
           margin: 0;
           padding: 0;
+          width: 100%;
           overflow-x: hidden;
           overflow-y: auto;
           background: #050505;
+          -webkit-overflow-scrolling: touch;
+          touch-action: manipulation;
         }
 
         *,
@@ -115,7 +118,7 @@ function Workspace() {
         }
 
         .workspace-content > section {
-          scroll-margin-top: 30px;
+          scroll-margin-top: clamp(15px, 4vw, 40px);
         }
 
         ::selection {

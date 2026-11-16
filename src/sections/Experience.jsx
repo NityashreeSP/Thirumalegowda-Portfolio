@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import {
   BriefcaseBusiness,
@@ -242,7 +241,7 @@ function Experience() {
         .experience-section {
           position: relative;
           width: 100%;
-          padding: 110px 5vw 100px;
+          padding: 100px 5vw 80px;
           box-sizing: border-box;
           background: #050505;
           color: #f5f0f1;
@@ -275,12 +274,12 @@ function Experience() {
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
-          gap: 50px;
-          margin-bottom: 65px;
+          gap: 40px;
+          margin-bottom: 55px;
         }
 
         .experience-label {
-          margin: 0 0 18px;
+          margin: 0 0 16px;
           font-family: monospace;
           font-size: 10px;
           letter-spacing: 0.16em;
@@ -289,9 +288,9 @@ function Experience() {
 
         .experience-heading h1 {
           margin: 0;
-          font-size: clamp(48px, 7vw, 85px);
-          line-height: 0.9;
-          letter-spacing: -0.07em;
+          font-size: clamp(38px, 6vw, 84px);
+          line-height: 0.92;
+          letter-spacing: -0.06em;
           font-weight: 800;
         }
 
@@ -303,8 +302,8 @@ function Experience() {
           max-width: 350px;
           margin: 0 0 5px;
           font-family: monospace;
-          font-size: 11px;
-          line-height: 1.9;
+          font-size: clamp(10px, 1.2vw, 11px);
+          line-height: 1.8;
           color: rgba(255, 235, 238, 0.48);
         }
 
@@ -338,7 +337,7 @@ function Experience() {
           display: grid;
           grid-template-columns: 64px 1fr;
           gap: 20px;
-          padding: 30px;
+          padding: 26px;
           border: 1px solid rgba(255, 255, 255, 0.08);
           border-radius: 18px;
           background: linear-gradient(
@@ -353,7 +352,7 @@ function Experience() {
         }
 
         .experience-card:hover {
-          transform: translateY(-5px);
+          transform: translateY(-4px);
           border-color: rgba(255, 48, 72, 0.35);
           box-shadow: 0 25px 65px rgba(120, 0, 20, 0.13);
         }
@@ -376,8 +375,8 @@ function Experience() {
         }
 
         .experience-icon {
-          width: 46px;
-          height: 46px;
+          width: 44px;
+          height: 44px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -414,18 +413,18 @@ function Experience() {
           justify-content: space-between;
           align-items: flex-start;
           gap: 20px;
-          padding-bottom: 20px;
+          padding-bottom: 18px;
           border-bottom: 1px solid rgba(255, 255, 255, 0.07);
         }
 
         .experience-title-row h2 {
           margin: 0;
-          font-size: clamp(22px, 3vw, 30px);
+          font-size: clamp(20px, 2.8vw, 28px);
           letter-spacing: -0.04em;
         }
 
         .experience-organization {
-          margin: 8px 0 0;
+          margin: 6px 0 0;
           font-family: monospace;
           font-size: 10px;
           color: #ff6679;
@@ -433,7 +432,7 @@ function Experience() {
 
         .experience-duration {
           flex-shrink: 0;
-          padding: 8px 11px;
+          padding: 7px 10px;
           border: 1px solid rgba(255, 255, 255, 0.1);
           border-radius: 6px;
           font-family: monospace;
@@ -444,10 +443,10 @@ function Experience() {
 
         .experience-description {
           max-width: 850px;
-          margin: 22px 0;
+          margin: 18px 0;
           font-family: monospace;
           font-size: 11px;
-          line-height: 1.9;
+          line-height: 1.85;
           color: rgba(245, 235, 237, 0.65);
         }
 
@@ -456,21 +455,21 @@ function Experience() {
         .experience-details {
           display: flex;
           flex-direction: column;
-          gap: 11px;
-          margin-bottom: 25px;
+          gap: 10px;
+          margin-bottom: 22px;
         }
 
         .detail-row {
           display: flex;
           align-items: flex-start;
-          gap: 11px;
+          gap: 10px;
         }
 
         .detail-dot {
           width: 5px;
           height: 5px;
           flex-shrink: 0;
-          margin-top: 7px;
+          margin-top: 6px;
           border-radius: 50%;
           background: #ff5369;
           box-shadow: 0 0 8px rgba(255, 48, 72, 0.5);
@@ -487,12 +486,12 @@ function Experience() {
         /* TECHNOLOGIES */
 
         .experience-tech {
-          padding-top: 20px;
+          padding-top: 18px;
           border-top: 1px solid rgba(255, 255, 255, 0.07);
         }
 
         .tech-heading {
-          margin: 0 0 13px;
+          margin: 0 0 11px;
           font-family: monospace;
           font-size: 8px;
           letter-spacing: 0.13em;
@@ -502,11 +501,11 @@ function Experience() {
         .tech-list {
           display: flex;
           flex-wrap: wrap;
-          gap: 8px;
+          gap: 7px;
         }
 
         .tech-list span {
-          padding: 8px 11px;
+          padding: 7px 10px;
           border: 1px solid rgba(255, 48, 72, 0.16);
           border-radius: 6px;
           background: rgba(255, 48, 72, 0.045);
@@ -529,15 +528,15 @@ function Experience() {
           justify-content: space-between;
           align-items: center;
           gap: 15px;
-          margin-top: 25px;
-          padding-top: 20px;
+          margin-top: 22px;
+          padding-top: 18px;
           border-top: 1px solid rgba(255, 255, 255, 0.07);
         }
 
         .website-status {
           display: flex;
           align-items: center;
-          gap: 9px;
+          gap: 8px;
           font-family: monospace;
           font-size: 8px;
           letter-spacing: 0.1em;
@@ -555,8 +554,8 @@ function Experience() {
         .website-link {
           display: flex;
           align-items: center;
-          gap: 10px;
-          padding: 11px 15px;
+          gap: 8px;
+          padding: 10px 14px;
           border: 1px solid rgba(255, 48, 72, 0.35);
           border-radius: 7px;
           background: rgba(255, 48, 72, 0.07);
@@ -581,8 +580,8 @@ function Experience() {
           align-items: center;
           justify-content: center;
           gap: 13px;
-          margin-top: 45px;
-          padding: 20px;
+          margin-top: 40px;
+          padding: 18px;
           border: 1px solid rgba(255, 255, 255, 0.06);
           border-radius: 10px;
           color: #ff5369;
@@ -603,7 +602,7 @@ function Experience() {
           .experience-heading {
             flex-direction: column;
             align-items: flex-start;
-            gap: 25px;
+            gap: 20px;
           }
 
           .heading-description {
@@ -612,17 +611,13 @@ function Experience() {
 
           .experience-title-row {
             flex-direction: column;
-            gap: 13px;
+            gap: 10px;
           }
         }
 
         @media (max-width: 600px) {
           .experience-section {
-            padding: 90px 20px 75px;
-          }
-
-          .experience-heading h1 {
-            font-size: 53px;
+            padding: 70px 4% 60px;
           }
 
           .experience-timeline {
@@ -630,32 +625,28 @@ function Experience() {
           }
 
           .experience-timeline::before {
-            left: 22px;
+            left: 18px;
           }
 
           .experience-card {
-            grid-template-columns: 42px 1fr;
-            gap: 13px;
-            padding: 19px 15px;
+            grid-template-columns: 36px 1fr;
+            gap: 12px;
+            padding: 18px 14px;
             border-radius: 14px;
           }
 
           .experience-icon {
-            width: 38px;
-            height: 38px;
+            width: 36px;
+            height: 36px;
           }
 
           .experience-icon svg {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
           }
 
           .experience-category {
             font-size: 7px;
-          }
-
-          .experience-title-row h2 {
-            font-size: 21px;
           }
 
           .experience-description {
@@ -668,7 +659,7 @@ function Experience() {
 
           .tech-list span {
             font-size: 8px;
-            padding: 7px 8px;
+            padding: 6px 8px;
           }
 
           .experience-footer {
@@ -684,6 +675,7 @@ function Experience() {
 
           .experience-note {
             align-items: flex-start;
+            padding: 15px;
           }
         }
 

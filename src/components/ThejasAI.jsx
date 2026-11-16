@@ -13,17 +13,18 @@ const SECTION_IDS = [
 const GAP = 3400;
 
 const getDims = () => {
-  const w = window.innerWidth < 600 ? 200 : 260;
+  const w = window.innerWidth < 600 ? 190 : 250;
   return { w, h: Math.round((w * 110) / 330) };
 };
 
 // Default parking spot: bottom-right corner
 const getHome = () => {
   const { w, h } = getDims();
-  const margin = window.innerWidth < 600 ? 10 : 24;
+  const marginX = window.innerWidth < 600 ? 12 : 24;
+  const marginY = window.innerWidth < 600 ? 24 : 48;
   return {
-    x: window.innerWidth - w - margin,
-    y: window.innerHeight - h - 48,
+    x: Math.max(10, window.innerWidth - w - marginX),
+    y: Math.max(10, window.innerHeight - h - marginY),
   };
 };
 
@@ -31,7 +32,7 @@ const getSide = (p) => {
   const { w } = getDims();
   return {
     right: p.x + w / 2 > window.innerWidth / 2,
-    below: p.y < 190,
+    below: p.y < 180,
   };
 };
 
@@ -134,27 +135,28 @@ const clickSurprises = [
 const pick = (items) => items[Math.floor(Math.random() * items.length)];
 
 /* ------------------------------------------------------------------ */
-/* Supercar (side view, nose points right; the wrapper mirrors it)     */
+/* Supercar (side view, nose points right; the wrapper mirrors it)    */
 /* ------------------------------------------------------------------ */
 
 function SuperCar() {
   return (
     <svg className="car-svg" viewBox="-30 0 330 110" aria-hidden="true">
       <defs>
+        {/* Body is now black with a soft grey sheen on top */}
         <linearGradient id="tj-body" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#ff4a5d" />
-          <stop offset="0.32" stopColor="#d4152b" />
-          <stop offset="0.72" stopColor="#6a0914" />
-          <stop offset="1" stopColor="#1a0408" />
+          <stop offset="0" stopColor="#4a4b54" />
+          <stop offset="0.3" stopColor="#1d1e24" />
+          <stop offset="0.7" stopColor="#09090c" />
+          <stop offset="1" stopColor="#000000" />
         </linearGradient>
         <linearGradient id="tj-glass" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#a9c0cc" />
-          <stop offset="0.45" stopColor="#18232a" />
-          <stop offset="1" stopColor="#040506" />
+          <stop offset="0" stopColor="#8fa0aa" />
+          <stop offset="0.45" stopColor="#141b20" />
+          <stop offset="1" stopColor="#030405" />
         </linearGradient>
         <linearGradient id="tj-carbon" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#32333a" />
-          <stop offset="1" stopColor="#050507" />
+          <stop offset="0" stopColor="#2a2b31" />
+          <stop offset="1" stopColor="#040405" />
         </linearGradient>
         <linearGradient id="tj-flame" x1="1" y1="0" x2="0" y2="0">
           <stop offset="0" stopColor="#fff2c4" />
@@ -162,8 +164,8 @@ function SuperCar() {
           <stop offset="1" stopColor="#ff1f3d" stopOpacity="0" />
         </linearGradient>
         <radialGradient id="tj-nose-glow">
-          <stop offset="0" stopColor="#fff1d0" stopOpacity="0.9" />
-          <stop offset="0.4" stopColor="#ff3a4e" stopOpacity="0.45" />
+          <stop offset="0" stopColor="#fff1d0" stopOpacity="0.8" />
+          <stop offset="0.4" stopColor="#ff3a4e" stopOpacity="0.35" />
           <stop offset="1" stopColor="#ff1f3d" stopOpacity="0" />
         </radialGradient>
         <filter id="tj-blur" x="-20%" y="-200%" width="140%" height="500%">
@@ -171,9 +173,9 @@ function SuperCar() {
         </filter>
       </defs>
 
-      {/* ground shadow + underglow */}
+      {/* ground shadow + subtle red underglow */}
       <ellipse cx="150" cy="97" rx="140" ry="6" fill="#000" opacity="0.75" filter="url(#tj-blur)" />
-      <ellipse className="car-underglow" cx="152" cy="93" rx="122" ry="4.5" fill="#ff1f3d" filter="url(#tj-blur)" />
+      <ellipse className="car-underglow" cx="152" cy="93" rx="110" ry="3.5" fill="#ff1f3d" filter="url(#tj-blur)" />
 
       {/* exhaust flames (only when revving) */}
       <g className="car-flame">
@@ -181,15 +183,16 @@ function SuperCar() {
         <path d="M 12 69 Q 0 67 -12 69 Q 0 71 12 71 Z" fill="#fff6d8" opacity="0.9" />
       </g>
 
-      {/* rear wing */}
+      {/* rear wing (black, thin red edge line) */}
       <path d="M 22 48 L 25 55 L 31 55 L 31 47 Z" fill="url(#tj-carbon)" />
-      <path d="M 2 45 L 46 38 L 49 43 L 6 50 Z" fill="url(#tj-carbon)" stroke="#ff2d45" strokeWidth="0.8" />
+      <path d="M 2 45 L 46 38 L 49 43 L 6 50 Z" fill="url(#tj-carbon)" stroke="#2e2f36" strokeWidth="0.8" />
+      <path d="M 4 47.5 L 47 40.5" stroke="#ff2d45" strokeWidth="0.9" strokeLinecap="round" />
 
       {/* main body */}
       <path
         d="M 6 76 L 4 64 Q 5 54 22 52 L 58 47 L 104 41 Q 124 26 150 26 L 186 38 L 268 55 Q 288 59 290 68 L 290 80 L 268 85 L 20 85 Q 8 84 6 76 Z"
         fill="url(#tj-body)"
-        stroke="#ff5568"
+        stroke="#3b3c45"
         strokeWidth="0.8"
       />
 
@@ -197,27 +200,28 @@ function SuperCar() {
       <path
         d="M 60 48 L 104 42 Q 124 28 150 28 L 186 40 L 266 56"
         fill="none"
-        stroke="rgba(255,255,255,0.5)"
+        stroke="rgba(255,255,255,0.35)"
         strokeWidth="1.4"
         strokeLinecap="round"
       />
-      <path d="M 30 62 Q 140 52 262 64" fill="none" stroke="#ff8b98" strokeOpacity="0.5" strokeWidth="1" />
-      <path d="M 40 73 L 250 73" fill="none" stroke="#000" strokeOpacity="0.35" strokeWidth="1.2" />
+      <path d="M 30 62 Q 140 52 262 64" fill="none" stroke="#ffffff" strokeOpacity="0.14" strokeWidth="1" />
+      {/* the one red pinstripe along the flank */}
+      <path d="M 40 73 L 250 73" fill="none" stroke="#ff2d45" strokeOpacity="0.9" strokeWidth="1.2" />
 
       {/* carbon skirts, splitter and diffuser */}
       <path d="M 100 80 L 210 80 L 208 85 L 102 85 Z" fill="url(#tj-carbon)" />
       <path d="M 246 85 L 291 79 L 291 83 L 268 87 L 246 87 Z" fill="url(#tj-carbon)" />
       <path d="M 6 79 L 40 79 L 56 85 L 10 86 Z" fill="url(#tj-carbon)" />
-      <path d="M 16 80 L 20 85 M 26 80 L 32 85 M 36 80 L 44 85" stroke="#ff2d45" strokeWidth="0.7" />
+      <path d="M 16 80 L 20 85 M 26 80 L 32 85 M 36 80 L 44 85" stroke="#4a4b55" strokeWidth="0.7" />
 
       {/* greenhouse */}
-      <path d="M 112 44 Q 128 31 150 30 L 180 40 L 150 46 Z" fill="url(#tj-glass)" stroke="rgba(255,255,255,0.3)" strokeWidth="0.6" />
+      <path d="M 112 44 Q 128 31 150 30 L 180 40 L 150 46 Z" fill="url(#tj-glass)" stroke="rgba(255,255,255,0.25)" strokeWidth="0.6" />
       <path d="M 152 30 L 152 46" stroke="rgba(0,0,0,0.6)" strokeWidth="1" />
 
-      {/* side intake, door line, mirror, hood vent */}
-      <path d="M 112 56 L 156 54 L 160 60 L 154 70 L 116 68 Z" fill="#07070a" stroke="#ff2d45" strokeWidth="0.8" />
-      <path d="M 122 58 L 124 67 M 131 57 L 133 67 M 140 56 L 142 68 M 149 56 L 150 69" stroke="#ff2d45" strokeWidth="0.7" strokeOpacity="0.8" />
-      <path d="M 168 46 L 172 69 L 206 66" fill="none" stroke="rgba(0,0,0,0.55)" strokeWidth="1" />
+      {/* side intake (red outline only), door line, mirror, hood vent */}
+      <path d="M 112 56 L 156 54 L 160 60 L 154 70 L 116 68 Z" fill="#050507" stroke="#ff2d45" strokeWidth="0.8" />
+      <path d="M 122 58 L 124 67 M 131 57 L 133 67 M 140 56 L 142 68 M 149 56 L 150 69" stroke="#3d3e47" strokeWidth="0.7" />
+      <path d="M 168 46 L 172 69 L 206 66" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
       <path d="M 184 42 L 195 40 L 196 44 L 186 45 Z" fill="url(#tj-carbon)" />
       <path d="M 220 52 L 246 56 L 244 59 L 218 55 Z" fill="url(#tj-carbon)" />
 
@@ -227,17 +231,17 @@ function SuperCar() {
       <path className="car-taillight" d="M 6 62 L 24 57 L 25 61 L 7 67 Z" fill="#ff2640" />
 
       {/* wheel arches */}
-      <path d="M 57 78 A 23 23 0 0 1 103 78 Z" fill="#050506" stroke="#ff3a4e" strokeWidth="0.8" />
-      <path d="M 207 78 A 23 23 0 0 1 253 78 Z" fill="#050506" stroke="#ff3a4e" strokeWidth="0.8" />
+      <path d="M 57 78 A 23 23 0 0 1 103 78 Z" fill="#030304" stroke="#2e2f36" strokeWidth="0.8" />
+      <path d="M 207 78 A 23 23 0 0 1 253 78 Z" fill="#030304" stroke="#2e2f36" strokeWidth="0.8" />
 
-      {/* wheels */}
+      {/* wheels: black tyres, grey rims, red caliper + hub accent */}
       {[80, 230].map((cx) => (
         <g key={cx} transform={`translate(${cx} 78)`}>
           <circle r="17.5" fill="#050506" />
           <circle r="17.5" fill="none" stroke="#2c2d33" strokeWidth="1.2" />
           <path d="M -10 -9 A 13 13 0 0 1 10 -9 L 7 -5 A 9 9 0 0 0 -7 -5 Z" fill="#ff2a40" />
           <g className="car-wheel-spin">
-            <circle r="12.5" fill="#14141a" stroke="#b9bcc6" strokeWidth="1.4" />
+            <circle r="12.5" fill="#0c0c10" stroke="#8d909a" strokeWidth="1.4" />
             {[0, 72, 144, 216, 288].map((angle) => (
               <rect
                 key={angle}
@@ -246,7 +250,7 @@ function SuperCar() {
                 width="2.2"
                 height="11"
                 rx="1"
-                fill="#d7d9e0"
+                fill="#a9acb6"
                 transform={`rotate(${angle})`}
               />
             ))}
@@ -259,7 +263,7 @@ function SuperCar() {
 }
 
 /* ------------------------------------------------------------------ */
-/* Component                                                           */
+/* Component                                                          */
 /* ------------------------------------------------------------------ */
 
 function ThejasAI() {
@@ -425,7 +429,7 @@ function ThejasAI() {
         const { w, h } = getDims();
         placeAt({
           x: clamp(posRef.current.x, 4, window.innerWidth - w - 4),
-          y: clamp(posRef.current.y, 4, window.innerHeight - h - 30),
+          y: clamp(posRef.current.y, 4, window.innerHeight - h - 24),
         });
       } else {
         placeAt(getHome());
@@ -473,7 +477,7 @@ function ThejasAI() {
 
     placeAt({
       x: clamp(event.clientX - offsetX, 4, window.innerWidth - w - 4),
-      y: clamp(event.clientY - offsetY, 4, window.innerHeight - h - 30),
+      y: clamp(event.clientY - offsetY, 4, window.innerHeight - h - 24),
     });
   };
 
@@ -701,12 +705,12 @@ function ThejasAI() {
         }
 
         .car-underglow {
-          opacity: 0.75;
+          opacity: 0.5;
           transition: opacity 0.3s ease;
         }
 
         .thejas-car:hover .car-underglow {
-          opacity: 1;
+          opacity: 0.8;
         }
 
         .car-headlight {
@@ -768,10 +772,10 @@ function ThejasAI() {
 
         .thejas-ai-bubble {
           position: absolute;
-          width: min(255px, calc(100vw - 24px));
-          min-height: 90px;
+          width: min(255px, calc(100vw - 32px));
+          min-height: 85px;
           box-sizing: border-box;
-          padding: 14px 16px;
+          padding: 12px 14px;
           border: 1px solid rgba(255, 55, 75, 0.48);
           border-radius: 15px;
           background: linear-gradient(145deg, #1b0b0e, #09090c);
@@ -785,7 +789,7 @@ function ThejasAI() {
         }
 
         .bubble-above { bottom: calc(100% + 10px); }
-        .bubble-below { top: calc(100% + 28px); }
+        .bubble-below { top: calc(100% + 24px); }
         .bubble-left { left: 0; }
         .bubble-right { right: 0; }
 
@@ -793,7 +797,7 @@ function ThejasAI() {
           display: flex;
           align-items: center;
           gap: 8px;
-          margin-bottom: 10px;
+          margin-bottom: 8px;
           color: #ff5369;
           font-size: 9px;
           font-weight: 900;
@@ -825,14 +829,14 @@ function ThejasAI() {
         }
 
         .thejas-bubble-message {
-          min-height: 38px;
-          font-size: 12px;
+          min-height: 36px;
+          font-size: 11px;
           line-height: 1.6;
           color: rgba(255, 245, 246, 0.9);
         }
 
         .thejas-bubble-hint {
-          margin-top: 9px;
+          margin-top: 8px;
           color: rgba(255, 90, 110, 0.65);
           font-size: 7px;
           letter-spacing: 1.3px;
@@ -840,32 +844,32 @@ function ThejasAI() {
 
         .thejas-bubble-tail {
           position: absolute;
-          width: 13px;
-          height: 13px;
+          width: 12px;
+          height: 12px;
           background: #0e090b;
           transform: rotate(45deg);
         }
 
         .bubble-above .thejas-bubble-tail {
-          bottom: -7px;
+          bottom: -6px;
           border-right: 1px solid rgba(255, 55, 75, 0.48);
           border-bottom: 1px solid rgba(255, 55, 75, 0.48);
         }
 
         .bubble-below .thejas-bubble-tail {
-          top: -7px;
+          top: -6px;
           border-left: 1px solid rgba(255, 55, 75, 0.48);
           border-top: 1px solid rgba(255, 55, 75, 0.48);
         }
 
-        .bubble-left .thejas-bubble-tail { left: 60px; }
-        .bubble-right .thejas-bubble-tail { right: 60px; }
+        .bubble-left .thejas-bubble-tail { left: 45px; }
+        .bubble-right .thejas-bubble-tail { right: 45px; }
 
         .thejas-typing {
           display: flex;
           align-items: center;
           gap: 5px;
-          height: 30px;
+          height: 28px;
         }
 
         .thejas-typing span {
@@ -914,8 +918,8 @@ function ThejasAI() {
           z-index: 10;
           top: -10px;
           right: -4px;
-          width: 28px;
-          height: 28px;
+          width: 26px;
+          height: 26px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -924,7 +928,7 @@ function ThejasAI() {
           border-radius: 50%;
           background: #16090c;
           color: #ff6577;
-          font-size: 18px;
+          font-size: 16px;
           cursor: pointer;
           pointer-events: auto;
           box-shadow: 0 0 14px rgba(255, 35, 55, 0.25);
@@ -943,15 +947,15 @@ function ThejasAI() {
         .thejas-ai-toggle.toggle-closed {
           position: fixed;
           top: auto;
-          right: 20px;
-          bottom: 20px;
+          right: 16px;
+          bottom: 16px;
           z-index: 99999;
-          width: 48px;
-          height: 48px;
+          width: 44px;
+          height: 44px;
           border: 1px solid #ff5369;
           background: linear-gradient(145deg, #b70e27, #160609);
           color: white;
-          font-size: 17px;
+          font-size: 16px;
           font-weight: 900;
           box-shadow: 0 0 25px rgba(255, 30, 55, 0.45);
         }
@@ -1007,8 +1011,8 @@ function ThejasAI() {
 
         @media (max-width: 600px) {
           .thejas-ai-toggle.toggle-closed {
-            right: 12px;
-            bottom: 12px;
+            right: 14px;
+            bottom: 14px;
           }
         }
 
