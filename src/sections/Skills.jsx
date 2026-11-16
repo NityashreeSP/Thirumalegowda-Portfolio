@@ -328,11 +328,10 @@ function Skills() {
 
       {/* INTERNAL CSS */}
       <style>{`
-
         .sk-section {
           position: relative;
-          min-height: 100vh;
-          padding: 110px 5vw 80px;
+          min-height: auto;
+          padding: 50px 5vw 40px;
           overflow: hidden;
           box-sizing: border-box;
           background: #070606;
@@ -384,12 +383,12 @@ function Skills() {
           position: relative;
           z-index: 2;
           max-width: 1300px;
-          margin: 0 auto 50px;
+          margin: 0 auto 40px;
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
           gap: 30px;
-          padding-bottom: 30px;
+          padding-bottom: 24px;
           border-bottom: 1px solid rgba(255,48,72,0.2);
         }
 
@@ -565,6 +564,7 @@ function Skills() {
           font-size: 12px;
           font-weight: 600;
           letter-spacing: -0.01em;
+          white-space: nowrap;
         }
 
         .sk-index-count {
@@ -786,7 +786,7 @@ function Skills() {
           position: relative;
           z-index: 2;
           max-width: 1300px;
-          margin: 45px auto 0;
+          margin: 35px auto 0;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -806,9 +806,9 @@ function Skills() {
           color: #ff6879;
         }
 
-        /* RESPONSIVE UPDATES */
+        /* RESPONSIVE UPDATES & ISSUE 3 HORIZONTAL SCROLL FIX */
 
-        @media (max-width: 1000px) {
+        @media (max-width: 1150px) {
           .sk-header {
             flex-direction: column;
             align-items: flex-start;
@@ -819,23 +819,34 @@ function Skills() {
           }
 
           .sk-index {
-            position: static;
-            padding: 16px;
+            position: relative;
+            top: auto;
+            padding: 14px;
+            overflow: hidden;
+          }
+
+          .sk-index-title {
+            margin-bottom: 10px;
           }
 
           .sk-index-list {
-            flex-direction: row;
-            overflow-x: auto;
-            padding-bottom: 5px;
+            flex-direction: row !important;
+            overflow-x: auto !important;
+            overflow-y: hidden !important;
+            padding-bottom: 8px;
+            -webkit-overflow-scrolling: touch;
+            touch-action: pan-x;
             scrollbar-width: none;
             -ms-overflow-style: none;
           }
+
           .sk-index-list::-webkit-scrollbar {
             display: none;
           }
 
           .sk-index-item {
-            min-width: 170px;
+            flex-shrink: 0 !important;
+            min-width: 175px;
             padding: 10px 14px;
           }
 
@@ -846,7 +857,7 @@ function Skills() {
 
         @media (max-width: 600px) {
           .sk-section {
-            padding: 70px 4% 60px;
+            padding: 45px 4% 30px;
           }
 
           .sk-stats {
@@ -898,7 +909,6 @@ function Skills() {
             font-size: 8px;
           }
         }
-
       `}</style>
     </section>
   );

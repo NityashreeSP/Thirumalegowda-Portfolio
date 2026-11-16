@@ -617,15 +617,15 @@ function Projects() {
 
       {/* INTERNAL CSS */}
       <style>{`
-        .projects-section {
-          position: relative;
-          width: 100%;
-          padding: 100px 5vw 80px;
-          box-sizing: border-box;
-          background: #050505;
-          color: #f5f0f1;
-          overflow: hidden;
-        }
+       .projects-section {
+  position: relative;
+  width: 100%;
+  padding: 50px 5vw 60px; /* CHANGED: Reduced top padding from 100px to 50px */
+  box-sizing: border-box;
+  background: #050505;
+  color: #f5f0f1;
+  overflow: hidden;
+}
 
         .projects-section::before {
           content: "";

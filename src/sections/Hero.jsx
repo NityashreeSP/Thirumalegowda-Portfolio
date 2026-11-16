@@ -215,12 +215,22 @@ function Hero() {
           gap: 64px;
         }
         .hx-hello { color: var(--hot); font-size: 15px; font-weight: 500; margin-bottom: 14px !important; }
-        .hx-intro h1 {
-          font-size: clamp(42px, 8.2vw, 116px);
-          line-height: 0.92;
-          font-weight: 800;
-          letter-spacing: -0.035em;
-        }
+       .hx-intro h1 {
+  font-size: clamp(24px, 6.2vw, 116px); /* Prevents text overflow on small viewports */
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  white-space: nowrap; /* Forces full name onto one single line */
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Optional mobile fine-tuning for extremely small viewports */
+@media (max-width: 600px) {
+  .hx-intro h1 {
+    font-size: clamp(20px, 5.5vw, 36px);
+  }
+}
         .hx-intro h1 span { color: var(--red); }
         .hx-desc { margin: 28px 0 22px !important; max-width: 34ch; font-size: 19px; line-height: 1.5; color: var(--dim); }
 
